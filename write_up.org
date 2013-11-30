@@ -1,0 +1,38 @@
+#+TITLE:     2013-FA-CS-336-LA-05-AndyS-SheaN
+#+AUTHOR:    Andrew Schwartzmeyer, Shea Newton
+#+EMAIL:     schw2620@vandals.uidaho.edu
+#+DATE:      2013-11-30 Sat
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+
+* TODO LA-05 SSL :noexport:
+   DEADLINE: <2013-11-24 Sun>
+
+For this laboratory assignment please follow the instructions in the
+laboratory in the link below and for preparing your laboratory report
+please follow the instructions in this posting plus all the guidelines
+posted within this course site under Course Info -> Coursework
+Submission Instructions -> LA-Laboratory Report Submissions.
+
+Secure Web and SSL/TLS
+
+Laboratory Instructions:
+
+http://csis.pace.edu/~lchen/sweet/modules/3-SecureTransaction.pdf
+
+These laboratories have been developed by Li-Chiou Chen of Pace
+University and collaborators with sponsorship from the National
+Science Foundation (NSF).
+
+Prepare and submit a laboratory report in PDF following the guidelines
+posted within this course site under Course Info -> Coursework
+Submission Instructions -> LA-Laboratory Report Submissions.
