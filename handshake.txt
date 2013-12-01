@@ -1,0 +1,72 @@
+CONNECTED(00000003)
+---
+Certificate chain
+ 0 s:/C=US/ST=New York/L=New York/O=Pace University/OU=CSIS-IT300/CN=www.BadStore.net/emailAddress=admin@badstore.net
+   i:/C=US/ST=New York/L=New York/O=Pace University/OU=CSIS-IT300/CN=www.BadStore.net/emailAddress=admin@badstore.net
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIICuTCCAiICCQDOGAJHzJMg+zANBgkqhkiG9w0BAQUFADCBoDELMAkGA1UEBhMC
+VVMxETAPBgNVBAgTCE5ldyBZb3JrMREwDwYDVQQHEwhOZXcgWW9yazEYMBYGA1UE
+ChMPUGFjZSBVbml2ZXJzaXR5MRMwEQYDVQQLEwpDU0lTLUlUMzAwMRkwFwYDVQQD
+ExB3d3cuQmFkU3RvcmUubmV0MSEwHwYJKoZIhvcNAQkBFhJhZG1pbkBiYWRzdG9y
+ZS5uZXQwHhcNMTMxMjAxMDAyMjQwWhcNMTQxMjAxMDAyMjQwWjCBoDELMAkGA1UE
+BhMCVVMxETAPBgNVBAgTCE5ldyBZb3JrMREwDwYDVQQHEwhOZXcgWW9yazEYMBYG
+A1UEChMPUGFjZSBVbml2ZXJzaXR5MRMwEQYDVQQLEwpDU0lTLUlUMzAwMRkwFwYD
+VQQDExB3d3cuQmFkU3RvcmUubmV0MSEwHwYJKoZIhvcNAQkBFhJhZG1pbkBiYWRz
+dG9yZS5uZXQwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALU402W2zyvZJQiR
+W0COPNSHA6MalVy4rXGoS6JJXwbiGze4Z9ZxXpi46UShxpFZ0+VzsZfppvnfrOuP
+qO0nP8kaaztnPiLWD4P/OsxHl3FWvB4qIgWVBt72ula0eepp0I8nWh0Nya0qeuQ1
+4FcXJ/iR4yIHrFcA2fC+/HrH45WNAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAcetX
+4JZaqWN37moErCKlc48AXjy2N6Z2g2UVkZr2qbiYu6L2O6H1ChlTNSqFefMzea0t
+th27n0Lj5XS2wrQ3x9GJFK7vhj1r4JxmMd1EJIWAaI2q3+6QmLnktHp4U//yZaLn
+RaEliLtb7cnGxWEW387kzykpEz2erAbb54m4624=
+-----END CERTIFICATE-----
+subject=/C=US/ST=New York/L=New York/O=Pace University/OU=CSIS-IT300/CN=www.BadStore.net/emailAddress=admin@badstore.net
+issuer=/C=US/ST=New York/L=New York/O=Pace University/OU=CSIS-IT300/CN=www.BadStore.net/emailAddress=admin@badstore.net
+---
+No client certificate CA names sent
+---
+SSL handshake has read 1451 bytes and written 293 bytes
+---
+New, TLSv1/SSLv3, Cipher is DHE-RSA-AES256-SHA
+Server public key is 1024 bit
+Secure Renegotiation IS supported
+Compression: zlib compression
+Expansion: zlib compression
+SSL-Session:
+    Protocol  : TLSv1
+    Cipher    : DHE-RSA-AES256-SHA
+    Session-ID: 15AC5EB5AA13C3A3C6B4402539023992FAC0EB23B3A909933735A7E09CA580CD
+    Session-ID-ctx: 
+    Master-Key: FE98449183B19680DEAE1BE73EA64D0D31F250666606933DD9CFD754509A919CB87A9E025D27A6374C5DC77D6D26991E
+    Key-Arg   : None
+    TLS session ticket:
+    0000 - 0f 3f f6 02 52 cf 39 6c-2f 2f db ee ac 4f de 1a   .?..R.9l//...O..
+    0010 - 7e 36 21 10 33 7e ea 4c-08 98 19 9e 0a 31 bd 68   ~6!.3~.L.....1.h
+    0020 - 25 55 b9 d2 ec 8a 6d e2-b8 d0 52 69 3f 2b e8 ac   %U....m...Ri?+..
+    0030 - 87 b4 64 38 de 8f 46 41-ce da 52 3b da 95 8b be   ..d8..FA..R;....
+    0040 - f0 bc 2a 96 32 a0 1c d0-b3 34 d6 3d a3 40 48 2d   ..*.2....4.=.@H-
+    0050 - 9b 4c db 83 32 8b 04 e0-88 7e f3 c1 78 f1 cf d3   .L..2....~..x...
+    0060 - 04 02 8a da 21 c3 4c 89-c2 22 a9 27 c9 13 d6 be   ....!.L..".'....
+    0070 - 39 9e d9 d0 f1 fe ce 9b-64 37 b5 1a c9 c7 be 6d   9.......d7.....m
+    0080 - 9a c7 69 7d 0c a8 e4 c0-b5 a0 0f 84 df d5 7b f2   ..i}..........{.
+    0090 - f7 92 de 63 af 2d 6a 54-e3 66 e7 e5 02 f1 14 80   ...c.-jT.f......
+    00a0 - 35 67 60 32 c6 e5 3f fa-91 41 6b 98 8b ca 98 c5   5g`2..?..Ak.....
+    00b0 - 61 46 d9 73 57 e1 e6 40-69 ce 5b a9 3b c0 98 bc   aF.sW..@i.[.;...
+
+    Compression: 1 (zlib compression)
+    Start Time: 1385859624
+    Timeout   : 300 (sec)
+    Verify return code: 18 (self signed certificate)
+---
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>404 Not Found</title>
+</head><body>
+<h1>Not Found</h1>
+<p>The requested URL /HTTP/1.1 was not found on this server.</p>
+<hr>
+<address>Apache/2.2.16 (Ubuntu) Server at www.badstore.net Port 443</address>
+</body></html>
+closed
