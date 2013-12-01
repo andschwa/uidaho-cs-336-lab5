@@ -247,17 +247,22 @@ closed
   message failed.
  
 \noindent What information does this file contain?
-- Connected tag
-- Certificate chains 
-- Server Certificate
-- Client certificate authority names sent
+- Connected tag 
+- Certificate chains, certificate origin address 
+- Server Certificate, the public RSA key
+- Client certificate authority names, if sent
 - SSL handshake bytes read and written.
-- Cipher type
-- Size of public key
-- Support status of secure renegotiation
-- Compression type
-- Expansion type
-- SSL-Session information:
+- Cipher type, each party must agree on this for workable encrypted
+  communication.
+- Size of public key, each party must agree on this for workable encrypted
+  communication.
+- Support status of secure renegotiation, whether each party agrees on
+  how to change session key or security parameters in shared
+  communication channels.
+- Compression type, if compression used they must be compatible with this. 
+- Expansion type, if compression used they must be compatible with this. 
+- SSL-Session information: The following were the agreed upon
+  parameters that resulted from the handshake:
   - Protocol
   - Cipher
   - Session-ID
