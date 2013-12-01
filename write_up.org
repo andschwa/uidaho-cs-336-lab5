@@ -125,6 +125,7 @@ apache2 restart~.
 Since this is a local site, we change our hosts file to point
 127.0.0.1 from localhost to the Apache2 VirtualHost www.badstore.net.
 
+\newpage
 * 4.3 Running a Secure Web Server
 Going to the URL "http://www.badstore.net" (not, contrary to the lab,
 localhost, as it no longer resolves to anything since we previously
@@ -138,6 +139,7 @@ listening. Our VirtualHost listens only to 443.
 #+NAME:   fig:It Works!
 [[./it_works.png]]
 
+\newpage
 Now we attempt to open the URL "https://www.badstore.net" (which is
 port 443) in Firefox, which our hosts file redirects to our internal
 Apache web server that we setup, and are immediately prompted with a
