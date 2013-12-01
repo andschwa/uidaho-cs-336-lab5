@@ -5,7 +5,7 @@
 #+DESCRIPTION:
 #+KEYWORDS:
 #+LANGUAGE:  en
-#+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
 #+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
 #+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
 #+EXPORT_SELECT_TAGS: export
@@ -74,38 +74,41 @@ Protocols used for web transactions:
 - If certificate has been revoked by issuing authority OCSP server
   connection will fail and certificate will be treated as invalid.
 
-
 * 4.1.2 Creating SSL Certificates Using OpenSSL
 ** Creating public/private key pair
 To generate a Certificate Signing Request (CSR), first we must generate our
-own public/private key pair (in the directory `/etc/apache2/ssl` for
-convenience), using the command `sudo openssl genrsa -des3 -out
-server.key 1024`. We used the passphrase "lab5".
+own public/private key pair (in the directory ~/etc/apache2/ssl~ for
+convenience), using the command ~sudo openssl genrsa -des3 -out
+server.key 1024~. We used the passphrase "lab5".
 
 ** Generating the CSR
-Next we store said passphrase in `/etc/apache2/ssl_passphrase`,
+Next we store said passphrase in ~/etc/apache2/ssl_passphrase~,
 replacing the current entry of "123456". With this done, we now
-generate an actual CSR with the command `sudo openssl req -new -key
-server.key -out server.csr`, filling in the certificate information
+generate an actual CSR with the command ~sudo openssl req -new -key
+server.key -out server.csr~, filling in the certificate information
 with that provided by the lab.
 
 ** Generating our certificate
 Now we make our own self-signed certificate valid for a year with the
-command `sudo openssl x509 -req -days 365 -in server.csr -signkey
-server.key -out server.crt`.
+command:
+
+#+BEGIN_SRC shell
+sudo openssl x509 -req -days 365 -in server.csr
+    -signkey server.key -out server.crt
+#+END_SRC
 
 * 4.2 Configuring Apache2 with BadStore.net
 ** Enabling SSL module for Apache2
 We're asked to enable the SSL module for Apache 2 with the command
-`sudo a2enmod ssl`; however, it was already enabled.
+~sudo a2enmod ssl~; however, it was already enabled.
 
 ** Creating BadStore.net's VirtualHost
 We copy Apache2's default virtual host configuration from
-`/etc/apache2/sites-available/default` to
-`/etc/apache2/sites-available/www.badstore.net`. Of course, we not
+~/etc/apache2/sites-available/default~ to
+~/etc/apache2/sites-available/www.badstore.net~. Of course, we not
 have to adjust the VirtualHost port to 443, add the line "ServerName
 www.badstore.net:443", change the DocumentRoot and Directory to point
-to `/var/www/badstore`, and enable SSL for the host with the lines:
+to ~/var/www/badstore~, and enable SSL for the host with the lines:
 
 #+BEGIN_SRC text
 SSLEngine On
@@ -114,12 +117,13 @@ SSLCertificateKeyFile /etc/apache2/ssl/server.key
 #+END_SRC
 
 ** Enabling the site
-We now enable the site with the command `sudo a2ensite
-www.badstore.net`, and restart the Apache2 server with `sudo service
-apache2 restart`.
+We now enable the site with the command ~sudo a2ensite
+www.badstore.net~, and restart the Apache2 server with ~sudo service
+apache2 restart~.
 
 ** Editing the hosts file
-Since this is a local site, we change our hosts file to point 127.0.0.1 from localhost to the Apache2 VirtualHost www.badstore.net.
+Since this is a local site, we change our hosts file to point
+127.0.0.1 from localhost to the Apache2 VirtualHost www.badstore.net.
 
 * 4.3 Running a Secure Web Server
 Going to the URL "http://www.badstore.net" (not, contrary to the lab,
@@ -147,7 +151,7 @@ certificate, and then access the website over a "secure" connection.
 [[./https.png]]
 
 To answer the questions as per the lab:
-- Yes, the silver padlock in the lower righthand corner exists
+- Yes, the silver padlock in the lower right-hand corner exists
 - The validation period of the certificate is from 11/30/2013 -
   11/30/2014 (365 days).
 - It was issued by "Pace University" (us, as per the information we
@@ -160,8 +164,6 @@ To answer the questions as per the lab:
 
 * 4.4 Client SSL Handshakes
 The following text was captured from a GET request to our Apache2 server.
-
-The web server sends
 
 #+BEGIN_SRC text
 CONNECTED(00000003)
@@ -218,7 +220,7 @@ SSL-Session:
     0070 - 39 9e d9 d0 f1 fe ce 9b-64 37 b5 1a c9 c7 be 6d   9.......d7.....m
     0080 - 9a c7 69 7d 0c a8 e4 c0-b5 a0 0f 84 df d5 7b f2   ..i}..........{.
     0090 - f7 92 de 63 af 2d 6a 54-e3 66 e7 e5 02 f1 14 80   ...c.-jT.f......
-    00a0 - 35 67 60 32 c6 e5 3f fa-91 41 6b 98 8b ca 98 c5   5g`2..?..Ak.....
+    00a0 - 35 67 60 32 c6 e5 3f fa-91 41 6b 98 8b ca 98 c5   5g~2..?..Ak.....
     00b0 - 61 46 d9 73 57 e1 e6 40-69 ce 5b a9 3b c0 98 bc   aF.sW..@i.[.;...
 
     Compression: 1 (zlib compression)
@@ -240,8 +242,8 @@ closed
 
 \noindent Why does the web server send this information?
 - The handshake is a method of trading parameters required for
-  encrypted communitcation using symmetric methods as well
-  acknoledgement that a message was received succefully or that the
+  encrypted communication using symmetric methods as well
+  acknowledgement that a message was received successfully or that the
   message failed.
  
 \noindent What information does this file contain?
