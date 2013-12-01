@@ -237,3 +237,33 @@ SSL-Session:
 </body></html>
 closed
 #+END_SRC
+
+\noindent Why does the web server send this information?
+- The handshake is a method of trading parameters required for
+  encrypted communitcation using symmetric methods as well
+  acknoledgement that a message was received succefully or that the
+  message failed.
+ 
+\noindent What information does this file contain?
+- Connected tag
+- Certificate chains 
+- Server Certificate
+- Client certificate authority names sent
+- SSL handshake bytes read and written.
+- Cipher type
+- Size of public key
+- Support status of secure renegotiation
+- Compression type
+- Expansion type
+- SSL-Session information:
+  - Protocol
+  - Cipher
+  - Session-ID
+  - Master-Key
+  - Key-Args
+  - TLS session ticket
+  - Compression
+  - Start Time
+  - Timeout
+  - Return code verification
+- Close tag
