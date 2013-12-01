@@ -56,7 +56,7 @@ Protocols used for web transactions:
 \noindent Encryption Algorithms
 - Baltimore CyberTrust Root
    - PKCS #1 with SHA-1 With RSA Encryption
-- certSigh ROOT CA
+- certSIGN ROOT CA
   - PKCS #1 with SHA-1 With RSA Encryption
 
 
@@ -64,7 +64,7 @@ Protocols used for web transactions:
 \noindent Public Key field:
 - Baltimore CyberTrust Root
   - 2048 bits
-- certSigh ROOT CA
+- certSIGN ROOT CA
   - 2048 bits
 
 \noindent Protocol to verify certificates:
@@ -268,4 +268,4 @@ closed
   - Start Time
   - Timeout
   - Return code verification
-- Close tag
+- Closed tag
