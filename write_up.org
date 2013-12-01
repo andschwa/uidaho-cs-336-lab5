@@ -82,14 +82,67 @@ own public/private key pair (in the directory `/etc/apache2/ssl` for
 convenience), using the command `sudo openssl genrsa -des3 -out
 server.key 1024`. We used the passphrase "lab5".
 
+** Generating the CSR
 Next we store said passphrase in `/etc/apache2/ssl_passphrase`,
 replacing the current entry of "123456". With this done, we now
 generate an actual CSR with the command `sudo openssl req -new -key
 server.key -out server.csr`, filling in the certificate information
 with that provided by the lab.
 
+** Generating our certificate
 Now we make our own self-signed certificate valid for a year with the
 command `sudo openssl x509 -req -days 365 -in server.csr -signkey
 server.key -out server.crt`.
 
 * 4.2 Configuring Apache2 with BadStore.net
+** Enabling SSL module for Apache2
+We're asked to enable the SSL module for Apache 2 with the command
+`sudo a2enmod ssl`; however, it was already enabled.
+
+** Creating BadStore.net's VirtualHost
+We copy Apache2's default virtual host configuration from
+`/etc/apache2/sites-available/default` to
+`/etc/apache2/sites-available/www.badstore.net`. Of course, we not
+have to adjust the VirtualHost port to 443, add the line "ServerName
+www.badstore.net:443", change the DocumentRoot and Directory to point
+to `/var/www/badstore`, and enable SSL for the host with the lines:
+
+#+BEGIN_SRC text
+SSLEngine On
+SSLCertificateFile /etc/apache2/ssl/server.crt
+SSLCertificateKeyFile /etc/apache2/ssl/server.key
+#+END_SRC
+
+** Enabling the site
+We now enable the site with the command `sudo a2ensite
+www.badstore.net`, and restart the Apache2 server with `sudo service
+apache2 restart`.
+
+** Editing the hosts file
+Since this is a local site, we change our hosts file to point 127.0.0.1 from localhost to the Apache2 VirtualHost www.badstore.net.
+
+** Testing
+Going to the URL "http://www.badstore.net" (not, contrary to the lab,
+localhost, as it no longer resolves to anything since we previously
+removed it from our hosts file), will resolve to Apache2's default
+website (the "It works!" page), as our hosts file points to the IP
+127.0.0.1 (on which Apache is listening), and specifying http instead
+of https uses port 80, for which Apache's default site is
+listening. Our VirtualHost listens only to 443.
+
+#+CAPTION: HTTP It Works Page
+#+NAME:   fig:It Works!
+[[./it_works.png]]
+
+Now we attempt to open the URL "https://www.badstore.net" (which is
+port 443) in Firefox, which our hosts file redirects to our internal
+Apache web server that we setup, and are immediately prompted with a
+warning by Firefox that the certificate is untrusted (because, of
+course, it is self-signed). We can go ahead and confirm a security
+exception to tell Firefox to trust our completely insecure
+certificate, and then access the website over a "secure" connection.
+
+#+CAPTION: HTTPS Bad Store Page
+#+NAME:   fig:https://www.badstore.net
+[[./https.png]]
+
