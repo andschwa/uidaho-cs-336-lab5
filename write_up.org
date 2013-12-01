@@ -60,7 +60,11 @@ Protocols used for web transactions:
 - certSigh ROOT CA
   - 2048 bits
 
+\noindent Protocol to verify certificates:
+- Online Certificate Status Protocol (OCSP)
+
+\noindent When OCSP certificate is treated as invalid when:
+- If certificate has been revoked by issuing authority OCSP server
+  connection will fail and certificate will be treated as invalid.
 
 
-
- 
