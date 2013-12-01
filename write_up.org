@@ -146,3 +146,14 @@ certificate, and then access the website over a "secure" connection.
 #+NAME:   fig:https://www.badstore.net
 [[./https.png]]
 
+To answer the questions as per the lab:
+- Yes, the silver padlock in the lower righthand corner exists
+- The validation period of the certificate is from 11/30/2013 -
+  11/30/2014 (365 days).
+- It was issued by "Pace University" (us, as per the information we
+  added when we became our own CA)
+- Its functionality is to allow for encrypted asymmetric communication
+  between the user's browser and our server. This certificate will be
+  used by the server and the browser to securely exchange a temporary
+  symmetric encryption key for faster encrypted communication (the SSL
+  Handshake).
