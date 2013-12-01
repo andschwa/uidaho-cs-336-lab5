@@ -46,7 +46,12 @@ Protocols used for web transactions:
 - Baltimore CyberTrust Root
 - certSigh ROOT CA
 
-# Screenshot
+\newpage
+
+#+CAPTION: Baltimore CyberTrust Root Certificate
+#+NAME:   fig:SED-HR4049
+[[./baltimore.png]]
+
 
 \noindent Encryption Algorithms
 - Baltimore CyberTrust Root
@@ -54,6 +59,8 @@ Protocols used for web transactions:
 - certSigh ROOT CA
   - PKCS #1 with SHA-1 With RSA Encryption
  
+
+
 \noindent Public Key field:
 - Baltimore CyberTrust Root
   - 2048 bits
